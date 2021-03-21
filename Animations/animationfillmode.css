@@ -1,0 +1,84 @@
+/*
+Transitions 0 ou 100 %
+Do estado inicial para o final
+Animation 0% 2% 40% ... 100%
+multiplos estados
+*/
+
+div {
+  width: 150px;
+  height: 150px;
+  color: white;
+  margin: 10px;
+}
+
+.transition {
+  background: red;
+  transition: all 2s linear;
+}
+
+.transition:hover {
+  background: yellow;
+  transform: translateX(100px);
+}
+
+.animation {
+  background: blue;
+  animation-name: move;
+  animation-duration: 10s;
+  animation-iteration-count: 3; /* qtd de vezez*/
+  animation: move 5s infinite; /*shortcut*/
+}
+@keyframes move {
+  0% {
+    transform: translateX(20px);
+  }
+  50% {
+    transform: translateX(100px);
+    background: red;
+  }
+  75% {
+    transform: translateX(-200px);
+    background: yellow;
+  }
+  100% {
+    transform: translateX(20px);
+    background: green;
+  }
+}
+
+/*
+animation-fill-mode: vai deixar a configuracao do final da animacao.
+ex: se usar opacidade 0 e nao usar isso no fim ela fica invisivel.
+*/
+
+span div {
+  opacity: 0;
+}
+
+.fill {
+  background: blue;
+  animation: fill 5s 2;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fill {
+  0% {
+    opacity: 0.1;
+  }
+  25% {
+    transform: translateX(200px);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateX(-100px);
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(20px);
+    opacity: 1;
+  }
+}

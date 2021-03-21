@@ -1,0 +1,37 @@
+div {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+.one {
+  background: red;
+}
+
+.two:hover {
+  background: coral;
+  border-radius: 50%;
+  transform: scale(1.2);
+}
+
+.two {
+  background: green;
+  transition: background 2s, 1s, border-radius 3s, 2s;
+  /* shortcut propriedade/ duracao, delay */
+  transition: all 2s, 1s;
+  /* aplica a todas as opcoes do hover*/
+}
+
+.three:hover {
+  border-radius: 50%;
+}
+
+.three {
+  background: blue;
+  transition-property: background, border-radius;
+  /* adicinando , vc controla mais de um elemtento */
+  transition-duration: 4s, 2s;
+  /* se quiser ter um tempo diferente pra cada separa por , */
+  transition-delay: 2s;
+  /* atrasa o inicio da acao */
+}
